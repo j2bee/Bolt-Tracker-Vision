@@ -1,4 +1,6 @@
 # Autonomous Bolt Perception System
+![Bolt Tracker Demo](demo.gif)
+
 Computer Vision pipeline designed for identifying and tracking industrial fasteners in real-time.
 
 #Technical
