@@ -4,7 +4,7 @@
 Computer Vision pipeline designed for identifying and tracking industrial fasteners in real-time.
 
 #Technical
-*Language: Python 3
+*Language: Python 3, C++
 *Library: OpenCV (cv2)
 *Logic: HSV Color Thresholding + Contour Analysis
 
@@ -18,3 +18,15 @@ Computer Vision pipeline designed for identifying and tracking industrial fasten
 *Color Filtering: Converts BGR frames to HSV, isolate metallic reflection.
 *Geometry: Filtering noise by pixel area and calculates the object ratios to distinguish bolts from glares.
 *Lock: Calculate the centroid (Cx, Cy) and draws a targeting crosshair.
+
+#C++ Implementation (Optimization Phase)
+To meet the low-latency requirements of robotics, I ported the Python detection logic to C++
+
+#Key improvements:
+*Latency: Reduced frame processing time by leveraging C++'s compiled efficiency.
+*Memory Management: Utilized `std::vector` and OpenCV's `cv::Mat` for manual memory control
+
+###How to build
+bash
+g++ tracker.cpp -o tracker_app `pkg-config --cflags --libs opencv4`
+./tracker_app
